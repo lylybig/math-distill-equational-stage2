@@ -1,0 +1,94 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-08/v7",
+  "label": "no-llm-runtime-sample200-186",
+  "created_date": "2026-05-08",
+  "status": "frozen_operational_baseline",
+  "solver_path": "solvers/solo_official/versions/2026-05-08/v7/solver.py",
+  "solver_sha256": "788553fd06bdc81b9eb0ed652b510b3d901fca0e87fb9f22783c65bb8f7407b0",
+  "solver_bytes": 204806,
+  "origin": {
+    "source_draft": "2026-05-08/d9",
+    "base_version": "2026-05-08/v6",
+    "description": "Disable LLM fallback while the mass/gemma service is unavailable; keep deterministic certificates unchanged."
+  },
+  "changes": [
+    "Set MAX_LLM_ROUNDS to 0 for the d9 no-LLM runtime",
+    "Keep deterministic true proof compilers and false counterexample coverage unchanged",
+    "Remove runtime dependency on the mass/gemma chat endpoint for sample200 evaluation",
+    "Keep the solver under the 500000 byte official limit"
+  ],
+  "validation": {
+    "focused_tests": [
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d9_no_llm_exits_without_llm_after_rejected_true_attempt -q",
+        "status": "passed",
+        "result": "included in 4-test focused run"
+      },
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d9_no_llm_exits_without_llm_after_rejected_true_attempt tests/official/test_official_solo_submission.py::test_d8_true_689_compiles_collapse_before_llm tests/official/test_official_solo_submission.py::test_d7_true_3108_compiles_superpose_projection_before_llm tests/official/test_official_solo_submission.py::test_d7_true_674_compiles_left_absorption_before_llm -q",
+        "status": "passed",
+        "result": "4 passed in 42.35s"
+      }
+    ],
+    "targeted": [
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d9-truefailed14-parallel-w8",
+        "problem_set": "d9_true_failed14",
+        "accepted": 0,
+        "rejected": 14,
+        "errors": 0,
+        "llm_calls": 0,
+        "judge_calls": 124,
+        "aggregate_problem_elapsed_seconds": 740.52,
+        "wall_time_seconds": 115.8,
+        "wall_time_text": "1m55.8s"
+      }
+    ]
+  },
+  "sample200": {
+    "run_dir": "artifacts/runs/2026-05-08/official-draft-d9-sample200-parallel-w8",
+    "accepted": 186,
+    "rejected": 14,
+    "errors": 0,
+    "accepted_rate": 0.93,
+    "accepted_true": 86,
+    "accepted_false": 100,
+    "judge_calls": 376,
+    "llm_calls": 0,
+    "llm_solved": 0,
+    "aggregate_problem_elapsed_seconds": 3565.66,
+    "elapsed_seconds": 3565.66,
+    "elapsed_text": "59m25.7s",
+    "elapsed_seconds_meaning": "aggregate per-problem solver elapsed time from the runner summary; not end-to-end wall time for parallel runs",
+    "wall_time_seconds": 516.7,
+    "wall_time_text": "8m36.7s",
+    "wall_time_source": "summary.createdAt to summary.json mtime",
+    "delta_vs_previous_current": {
+      "accepted": 0,
+      "rejected": 0,
+      "errors": 0,
+      "true_accepted": 0,
+      "false_accepted": 0,
+      "llm_calls": -14,
+      "judge_calls": -17
+    },
+    "newly_solved_ids": [],
+    "remaining_failed_ids": [
+      "true_1167_2000",
+      "true_1698_555",
+      "true_1604_1822",
+      "true_2860_3458",
+      "true_1738_1258",
+      "true_2654_2864",
+      "true_2789_898",
+      "true_2935_3138",
+      "true_428_3725",
+      "true_1500_498",
+      "true_691_1976",
+      "true_2771_2775",
+      "true_2055_2656",
+      "true_1636_1839"
+    ]
+  }
+}

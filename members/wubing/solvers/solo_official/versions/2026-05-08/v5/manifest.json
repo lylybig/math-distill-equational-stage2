@@ -1,0 +1,114 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-08/v5",
+  "label": "vampire-superpose-compilers-sample200-185",
+  "created_date": "2026-05-08",
+  "status": "frozen_baseline",
+  "solver_path": "solvers/solo_official/versions/2026-05-08/v5/solver.py",
+  "solver_sha256": "bc3d31a3596243a9915b1bbfefe8955f60e92947d92fd6c561776f39538326ee",
+  "solver_bytes": 201155,
+  "origin": {
+    "source_draft": "2026-05-08/d7",
+    "base_version": "2026-05-08/v4",
+    "description": "Add two deterministic Vampire/superpose proof compilers for projection and left absorption true failures."
+  },
+  "changes": [
+    "Add try_vampire_superpose_projection_compiler for Equation3108-style projection proofs",
+    "Add try_vampire_superpose_left_absorption_compiler for Equation674-style left absorption proofs",
+    "Emit have/calc/congrArg certificates accepted by the official judge without external theorem imports",
+    "Keep both compilers before heavier true search and LLM fallback"
+  ],
+  "validation": {
+    "focused_tests": [
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d7_true_3108_compiles_superpose_projection_before_llm -q",
+        "status": "passed"
+      },
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d7_true_674_compiles_left_absorption_before_llm -q",
+        "status": "passed"
+      },
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py -q",
+        "status": "passed",
+        "result": "16 passed in 110.35s"
+      }
+    ],
+    "targeted": [
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d7-single-true3108",
+        "problem_set": "d7_true_3108",
+        "accepted": 1,
+        "rejected": 0,
+        "errors": 0,
+        "llm_calls": 0,
+        "judge_calls": 2
+      },
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d7-single-true674",
+        "problem_set": "d7_true_674",
+        "accepted": 1,
+        "rejected": 0,
+        "errors": 0,
+        "llm_calls": 0,
+        "judge_calls": 2
+      },
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d7-truefailed17-parallel-w8",
+        "problem_set": "d7_true_failed17",
+        "accepted": 2,
+        "rejected": 15,
+        "errors": 0,
+        "llm_calls": 15,
+        "judge_calls": 156
+      }
+    ]
+  },
+  "sample200": {
+    "run_dir": "artifacts/runs/2026-05-08/official-draft-d7-sample200-parallel-w8",
+    "accepted": 185,
+    "rejected": 15,
+    "errors": 0,
+    "accepted_rate": 0.925,
+    "accepted_true": 85,
+    "accepted_false": 100,
+    "judge_calls": 402,
+    "llm_calls": 15,
+    "llm_solved": 0,
+    "aggregate_problem_elapsed_seconds": 3354.77,
+    "elapsed_seconds": 3354.77,
+    "elapsed_text": "55m54.8s",
+    "elapsed_seconds_meaning": "aggregate per-problem solver elapsed time from the runner summary; not end-to-end wall time for parallel runs",
+    "wall_time_seconds": 514.78,
+    "wall_time_text": "8m34.8s",
+    "wall_time_source": "summary.createdAt to summary.json mtime",
+    "delta_vs_previous_current": {
+      "accepted": 2,
+      "rejected": -2,
+      "errors": 0,
+      "true_accepted": 2,
+      "false_accepted": 0
+    },
+    "newly_solved_ids": [
+      "true_3108_4642",
+      "true_674_668"
+    ],
+    "remaining_failed_ids": [
+      "true_1167_2000",
+      "true_1698_555",
+      "true_1604_1822",
+      "true_2860_3458",
+      "true_1738_1258",
+      "true_2654_2864",
+      "true_2789_898",
+      "true_2935_3138",
+      "true_428_3725",
+      "true_1500_498",
+      "true_691_1976",
+      "true_2771_2775",
+      "true_2055_2656",
+      "true_689_1350",
+      "true_1636_1839"
+    ]
+  }
+}

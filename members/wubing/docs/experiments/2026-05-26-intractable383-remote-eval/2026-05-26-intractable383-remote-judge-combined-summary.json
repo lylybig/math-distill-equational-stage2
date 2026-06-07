@@ -1,0 +1,120 @@
+{
+  "accepted_by_class": {
+    "B-brute": 11,
+    "C-cex": 44,
+    "D-implicit": 144,
+    "E-search": 10,
+    "R-rewrite": 60,
+    "V-vampire": 6
+  },
+  "accepted_by_oracle": {
+    "False": 44,
+    "True": 231
+  },
+  "accepted_by_strategy_top20": [
+    [
+      "true.proof.templatecheck.singleton_seedbank_specialization.any_target.v1",
+      86
+    ],
+    [
+      "true.proof.explicitbank.singleton_seedbank.any_target.v1",
+      70
+    ],
+    [
+      "true.proof.templatecheck.singleton_collapse.any_target.v1",
+      69
+    ],
+    [
+      "false.finmodel.setcheck.structured.all4x4.refutation4.all_equations.v1",
+      10
+    ],
+    [
+      "false.finmodel.setcheck.structured.all4x4.refutation852.all_equations.v1",
+      6
+    ],
+    [
+      "false.finmodel.setcheck.structured.all4x4.refutation5.all_equations.v1",
+      5
+    ],
+    [
+      "false.finmodel.setcheck.fin4_table_0231_3102_1320_2013.all_equations.v1",
+      5
+    ],
+    [
+      "false.finmodel.setcheck.fin7_table_0214365_3150624_4625031_6543210_5361402_2406153_1032546.all_equations.v1",
+      3
+    ],
+    [
+      "false.finmodel.setcheck.structured.affine_mod11_a7_b9_c9.all_equations.v1",
+      2
+    ],
+    [
+      "false.finmodel.setcheck.fin4_table_0011_2233_0011_2233.all_equations.v1",
+      2
+    ],
+    [
+      "false.finmodel.setcheck.structured.affine_mod9_a7_b3_c0.all_equations.v1",
+      2
+    ],
+    [
+      "false.finmodel.setcheck.structured.affine_mod4_a2_b1_c3.all_equations.v1",
+      2
+    ],
+    [
+      "true.proof.templatecheck.opnorm.hconst_default_sandwich_match_collapse.postedge_top40_extension.v1",
+      2
+    ],
+    [
+      "false.finmodel.setcheck.structured.all4x4.refutation773.all_equations.v1",
+      1
+    ],
+    [
+      "false.finmodel.setcheck.structured.affine_mod9_a6_b4_c0.all_equations.v1",
+      1
+    ],
+    [
+      "false.finmodel.setcheck.structured.affine_mod7_a3_b5_c0.all_equations.v1",
+      1
+    ],
+    [
+      "false.finmodel.setcheck.structured.affine_mod7_a6_b2_c0.all_equations.v1",
+      1
+    ],
+    [
+      "false.finmodel.setcheck.structured.affine_mod7_a5_b3_c0.all_equations.v1",
+      1
+    ],
+    [
+      "false.finmodel.setcheck.structured.affine_mod9_a6_b7_c8.all_equations.v1",
+      1
+    ],
+    [
+      "false.finmodel.setcheck.structured.affine_mod4_a1_b2_c3.all_equations.v1",
+      1
+    ]
+  ],
+  "dataset": "datasets/intractable_class_samples/*.jsonl",
+  "effective_accepted_count_on_383": 275,
+  "error_code_counts": {
+    "": 275
+  },
+  "first_pass_summary_path": "/tmp/intractable383_remote_judge_summary.json",
+  "input_static_eval_path": "/tmp/intractable383_canonical_all_order5_eval.json",
+  "output_path": "/tmp/intractable383_remote_judge_combined_results.jsonl",
+  "remaining_unaccepted_or_uncovered_count_on_383": 108,
+  "remote_accepted_count": 275,
+  "remote_input_path": "/tmp/intractable383_remote_judge_input.jsonl",
+  "remote_judged_count": 275,
+  "replaced_transient_failures": [
+    "mine_le4_646_2858"
+  ],
+  "retry_summary_path": "/tmp/intractable383_remote_judge_failed_retry_summary.json",
+  "schema_version": 1,
+  "static_covered_count": 275,
+  "static_uncovered_count": 108,
+  "static_verdict_mismatch_count": 0,
+  "status_counts": {
+    "accepted": 275
+  },
+  "total_dataset_count": 383
+}

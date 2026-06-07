@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Train Proof Seed"
+  short_description: "Prepare proof seeds for solver templates"
+  default_prompt: "Use $stage2-train-proof-seed to prepare bounded offline proof seeds for Stage 2 Solo true failures."
+
+policy:
+  allow_implicit_invocation: true

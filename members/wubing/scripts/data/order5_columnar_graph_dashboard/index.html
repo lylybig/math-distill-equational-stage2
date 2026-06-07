@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order5 Implication Graph</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="title-block">
+          <h1>Order5 Implication Graph</h1>
+          <div class="subline" id="storePath">loading store...</div>
+        </div>
+        <div class="top-actions">
+          <button type="button" id="countBitsButton">Refresh solved/unresolved</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="section overview-band">
+          <div class="metrics" id="metrics"></div>
+          <div class="layer-strip" id="layerStrip"></div>
+          <div class="layer-notes" id="layerNotes"></div>
+        </section>
+
+        <section class="section row-map-section">
+          <div class="section-header">
+            <h2>Equation Flow Map</h2>
+            <span class="pill" id="rowMapMeta">idle</span>
+          </div>
+          <div class="map-controls">
+            <label>
+              <span>Equation</span>
+              <input id="mapEquation" type="number" min="1" value="3">
+            </label>
+            <button type="button" id="rowMapButton">Render</button>
+            <div class="map-legend" id="rowMapLegend"></div>
+          </div>
+          <div class="dual-summary">
+            <div>
+              <div class="map-title">Targets from source</div>
+              <div class="map-summary" id="rowMapSummary"></div>
+            </div>
+            <div>
+              <div class="map-title">Sources to target</div>
+              <div class="map-summary" id="targetMapSummary"></div>
+            </div>
+          </div>
+          <div class="network-grid">
+            <div class="row-network-wrap">
+              <canvas id="rowNetworkCanvas" width="1200" height="260" aria-label="Sampled target links from source"></canvas>
+            </div>
+            <div class="row-network-wrap">
+              <canvas id="targetNetworkCanvas" width="1200" height="260" aria-label="Sampled source links to target"></canvas>
+            </div>
+          </div>
+          <div class="map-grid">
+            <div class="row-map-wrap">
+              <canvas id="rowMapCanvas" width="1200" height="240" aria-label="Source row target status map"></canvas>
+            </div>
+            <div class="row-map-wrap">
+              <canvas id="targetMapCanvas" width="1200" height="240" aria-label="Target column source status map"></canvas>
+            </div>
+          </div>
+          <div class="map-tooltip" id="rowMapTooltip" hidden></div>
+        </section>
+
+        <section class="workspace">
+          <div class="tool-panel">
+            <div class="panel-header">
+              <h2>Pair</h2>
+              <span class="pill" id="pairVerdict">idle</span>
+            </div>
+            <div class="query-grid">
+              <label>
+                <span>Source</span>
+                <input id="pairSource" type="number" min="1" placeholder="1">
+              </label>
+              <label>
+                <span>Target</span>
+                <input id="pairTarget" type="number" min="1" placeholder="2">
+              </label>
+            </div>
+            <button type="button" id="pairQueryButton">Query pair</button>
+            <div class="result-block" id="pairResult"></div>
+          </div>
+        </section>
+
+        <section class="section evidence-section">
+          <div class="section-header">
+            <h2>Evidence Feed</h2>
+            <span id="evidenceMeta"></span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Layer</th>
+                  <th>Read</th>
+                  <th>New</th>
+                  <th>Existing</th>
+                  <th>Conflicts</th>
+                  <th>Source</th>
+                </tr>
+              </thead>
+              <tbody id="evidenceRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <div class="toast" id="toast" hidden></div>
+    </div>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>

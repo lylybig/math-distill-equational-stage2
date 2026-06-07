@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Train Start"
+  short_description: "Autonomous solver iteration loop"
+  default_prompt: "Use $stage2-train-start to continue the Stage 2 Solo solver iteration loop autonomously."
+
+policy:
+  allow_implicit_invocation: true

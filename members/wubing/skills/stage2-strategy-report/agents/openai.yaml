@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Strategy Report"
+  short_description: "Report registry and queue status"
+  default_prompt: "Use $stage2-strategy-report to write a concise Stage 2 strategy registry coverage, mining-state, and merge-queue report."
+
+policy:
+  allow_implicit_invocation: true

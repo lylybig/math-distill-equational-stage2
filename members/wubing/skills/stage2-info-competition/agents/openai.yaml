@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Info Competition"
+  short_description: "Refresh official competition info"
+  default_prompt: "Use $stage2-info-competition to refresh the latest Stage 2 competition information and update local snapshots."
+
+policy:
+  allow_implicit_invocation: true

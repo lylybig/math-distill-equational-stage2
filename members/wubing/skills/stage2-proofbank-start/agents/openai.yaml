@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Proofbank Start"
+  short_description: "Coordinate targeted or bounded certificate batches"
+  default_prompt: "Use $stage2-proofbank-start to run a bounded Stage 2 true certificate batch, prioritizing targeted strategy-gate seed evidence when applicable."
+
+policy:
+  allow_implicit_invocation: true

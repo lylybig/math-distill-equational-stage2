@@ -1,0 +1,69 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-07/v2",
+  "label": "fin7-false907-sample200-176",
+  "created_date": "2026-05-07",
+  "status": "frozen_baseline",
+  "solver_path": "solvers/solo_official/versions/2026-05-07/v2/solver.py",
+  "solver_sha256": "c39a8b85292afaf98e401b9647237e0b0898d5ea7e26515343cc6c896d83e679",
+  "solver_bytes": 188134,
+  "origin": {
+    "source_draft": "2026-05-07/d1",
+    "base_version": "2026-05-07/v1",
+    "description": "Fin 7 false countermodel expansion that solves false_907_2534 without sample200 regressions."
+  },
+  "changes": [
+    "Increase extended counterexample search from max_n=5 to max_n=7",
+    "Add set_option maxRecDepth 1000000 to false certificates"
+  ],
+  "validation": {
+    "failed_subset": {
+      "run_dir": "artifacts/runs/2026-05-07/official-draft-d1-failed25",
+      "accepted": 1,
+      "rejected": 24,
+      "errors": 0,
+      "newly_solved_ids": ["false_907_2534"]
+    }
+  },
+  "sample200": {
+    "run_dir": "artifacts/runs/2026-05-07/official-draft-d1-sample200",
+    "accepted": 176,
+    "rejected": 24,
+    "errors": 0,
+    "accepted_rate": 0.88,
+    "accepted_true": 77,
+    "accepted_false": 99,
+    "judge_calls": 543,
+    "llm_calls": 24,
+    "llm_solved": 0,
+    "elapsed_seconds": 2654.5,
+    "elapsed_text": "44m14.5s",
+    "newly_solved_ids": ["false_907_2534"],
+    "remaining_failed_ids": [
+      "true_2942_5",
+      "true_3108_4642",
+      "true_1167_2000",
+      "true_1698_555",
+      "true_1604_1822",
+      "true_2111_1755",
+      "true_2860_3458",
+      "true_2061_307",
+      "true_1738_1258",
+      "true_2654_2864",
+      "true_2789_898",
+      "true_2935_3138",
+      "true_2135_2128",
+      "true_428_3725",
+      "true_1500_498",
+      "true_2137_1325",
+      "true_691_1976",
+      "true_2074_2082",
+      "true_2771_2775",
+      "false_1682_411",
+      "true_2055_2656",
+      "true_689_1350",
+      "true_674_668",
+      "true_1636_1839"
+    ]
+  }
+}

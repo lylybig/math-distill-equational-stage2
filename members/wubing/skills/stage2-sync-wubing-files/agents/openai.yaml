@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Sync Wubing Files"
+  short_description: "Sync selected files to Wubing"
+  default_prompt: "Use $stage2-sync-wubing-files to sync the selected Stage 2 files to the Wubing handoff directory."
+
+policy:
+  allow_implicit_invocation: true

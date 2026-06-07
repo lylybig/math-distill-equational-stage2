@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Proofbank Quality"
+  short_description: "Audit proofbank yield and targeted seed progress"
+  default_prompt: "Use $stage2-proofbank-quality-audit to audit proof bank quality, accepted yield, source balance, and targeted strategy-gate seed progress before continuing generation."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Train Improve Solver"
+  short_description: "Edit official solver.py"
+  default_prompt: "Use $stage2-train-improve-solver to improve the official Stage 2 Solo solver.py."
+
+policy:
+  allow_implicit_invocation: true

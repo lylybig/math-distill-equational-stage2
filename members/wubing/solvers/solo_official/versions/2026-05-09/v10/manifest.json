@@ -1,0 +1,143 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-09/v10",
+  "label": "no-llm-eq41-product-compiler-remote-dev-main-8227",
+  "created_date": "2026-05-09",
+  "status": "frozen_current_best_remote_order4_dev_main",
+  "solver_path": "solvers/solo_official/versions/2026-05-09/v10/solver.py",
+  "solver_sha256": "966cce8b1b508596154e881e3f7f90062414e575eab0c36ac50727d998bcb333",
+  "solver_bytes": 253506,
+  "origin": {
+    "source_draft": "2026-05-09/d2",
+    "base_version": "2026-05-09/v9",
+    "description": "Add a no-LLM Eq41 product proof compiler for high-order true families observed in remote dev_main/dev_fast failures."
+  },
+  "changes": [
+    "Add reusable Eq41 product compiler: derive x ◇ x = y ◇ z, then prove arbitrary binary-product equality goals through allprod.",
+    "Seed Eq41 derivations from verified external proof families for Equation3992, Equation4156, and Equation4174, plus small local reductions for Equation4163, Equation4186, Equation4191, Equation4193, and Equation4203.",
+    "Keep certificates self-contained inside submission code; do not import external equational_theories theorem names.",
+    "Keep MAX_LLM_ROUNDS at 0; no mass/gemma runtime dependency.",
+    "Avoid a known pair proof table; target equation remains compiled from the current problem."
+  ],
+  "validation": {
+    "focused_tests": [
+      {
+        "command": "pytest -q tests/official/test_official_solo_submission.py::test_d14_solver_emits_eq41_product_compiler_for_dev_fast_eq3992_failure",
+        "status": "passed",
+        "result": "1 passed in 10.61s"
+      },
+      {
+        "command": "pytest -q tests/official/test_official_solo_submission.py::test_d11_solver_emits_magmaegg_singleton_compiler_for_order4_true_failure tests/official/test_official_solo_submission.py::test_d12_solver_emits_expanded_magmaegg_singleton_for_dev_main_seed tests/official/test_official_solo_submission.py::test_d13_solver_emits_eq41_product_compiler_for_dev_main_tail_failure tests/official/test_official_solo_submission.py::test_d14_solver_emits_eq41_product_compiler_for_dev_fast_eq3992_failure",
+        "status": "passed",
+        "result": "4 passed in 42.37s"
+      }
+    ],
+    "targeted": [
+      {
+        "run_id": "remote-d2-eq41-tail-reps-w6-20260509-001",
+        "run_dir": "/workspace/artifacts/runs/2026-05-09/remote-d2-eq41-tail-reps-w6-20260509-001",
+        "problem_count": 6,
+        "metrics": "6A / 0R / 0E",
+        "judge_calls": 6,
+        "llm_calls": 0
+      },
+      {
+        "run_id": "remote-d2-eq41-3992-targeted-w2-20260509-001",
+        "run_dir": "/workspace/artifacts/runs/2026-05-09/remote-d2-eq41-3992-targeted-w2-20260509-001",
+        "problem_count": 2,
+        "metrics": "2A / 0R / 0E",
+        "judge_calls": 2,
+        "llm_calls": 0
+      }
+    ],
+    "remote_dev_fast": {
+      "baseline_run_id": "remote-current-dev-fast-w24-20260509-1400",
+      "baseline_metrics": "1646A / 354R / 0E",
+      "run_id": "remote-d2-eq41-dev-fast-w24-20260509-002",
+      "run_dir": "/workspace/artifacts/runs/2026-05-09/remote-d2-eq41-dev-fast-w24-20260509-002",
+      "metrics": "1648A / 352R / 0E",
+      "accepted": 1648,
+      "rejected": 352,
+      "errors": 0,
+      "delta_vs_remote_current": {
+        "accepted": 2,
+        "rejected": -2,
+        "errors": 0
+      },
+      "judge_calls": 5204,
+      "llm_calls": 0,
+      "max_workers": 24,
+      "aggregate_problem_elapsed_seconds": 34855.73
+    },
+    "remote_dev_main": {
+      "baseline_run_id": "remote-v9-current-dev-main-w24-20260509-001",
+      "baseline_metrics": "8219A / 1781R / 0E",
+      "run_id": "remote-d2-eq41-dev-main-w24-20260509-001",
+      "run_dir": "/workspace/artifacts/runs/2026-05-09/remote-d2-eq41-dev-main-w24-20260509-001",
+      "metrics": "8227A / 1773R / 0E",
+      "accepted": 8227,
+      "rejected": 1773,
+      "errors": 0,
+      "delta_vs_remote_current": {
+        "accepted": 8,
+        "rejected": -8,
+        "errors": 0
+      },
+      "judge_calls": 26404,
+      "llm_calls": 0,
+      "max_workers": 24,
+      "aggregate_problem_elapsed_seconds": 177649.73
+    },
+        "test_locked_shard_sanity": {
+            "sample": "data/processed/order4_splits/test_locked.jsonl rows with zero-based index i % 25 == 0",
+            "sample_count": 2000,
+            "reason_for_shard": "user constraint: large data only by shard sampling or targeted validation",
+      "current_run_id": "remote-current-test-locked-shard2000-w24-20260509-001",
+      "current_metrics": "1633A / 367R / 0E",
+      "draft_run_id": "remote-d2-eq41-test-locked-shard2000-w24-20260509-001",
+      "draft_metrics": "1634A / 366R / 0E",
+      "delta_vs_current": {
+        "accepted": 1,
+        "rejected": -1,
+        "errors": 0
+            },
+            "draft_judge_calls": 5342,
+            "draft_llm_calls": 0
+        },
+        "full_test_locked_gate": {
+            "reason_for_full_gate": "user updated promotion rule: after dev_fast/dev_main improvement, full test_locked is allowed as a freeze gate; use aggregate metrics only and do not tune on locked individual failures",
+            "problem_count": 50000,
+            "problem_input_sha256": "8a09561cecab0c8fa337db78c5c7876dfe472ac4708a85b4c9673c531a0dae7e",
+            "baseline_version": "2026-05-09/v9",
+            "baseline_run_id": "remote-v9-test-locked-full-w24-20260510-002",
+            "baseline_run_dir": "/workspace/artifacts/runs/2026-05-09/remote-v9-test-locked-full-w24-20260510-002",
+            "baseline_metrics": "40950A / 9050R / 0E",
+            "baseline_accepted": 40950,
+            "baseline_rejected": 9050,
+            "baseline_errors": 0,
+            "baseline_accepted_true": 15982,
+            "baseline_accepted_false": 24968,
+            "baseline_judge_calls": 132462,
+            "baseline_llm_calls": 0,
+            "candidate_run_id": "remote-v10-test-locked-full-w24-20260510-002",
+            "candidate_run_dir": "/workspace/artifacts/runs/2026-05-09/remote-v10-test-locked-full-w24-20260510-002",
+            "candidate_metrics": "40971A / 9029R / 0E",
+            "candidate_accepted": 40971,
+            "candidate_rejected": 9029,
+            "candidate_errors": 0,
+            "candidate_accepted_true": 16003,
+            "candidate_accepted_false": 24968,
+            "candidate_judge_calls": 132265,
+            "candidate_llm_calls": 0,
+            "delta_vs_v9": {
+                "accepted": 21,
+                "rejected": -21,
+                "errors": 0,
+                "accepted_true": 21,
+                "accepted_false": 0,
+                "judge_calls": -197,
+                "llm_calls": 0
+            }
+        }
+    }
+}

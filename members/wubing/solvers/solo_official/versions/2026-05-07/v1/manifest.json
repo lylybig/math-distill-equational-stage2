@@ -1,0 +1,27 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-07/v1",
+  "label": "opnorm-sample200-baseline-175",
+  "created_date": "2026-05-07",
+  "status": "frozen_baseline",
+  "solver_path": "solvers/solo_official/versions/2026-05-07/v1/solver.py",
+  "solver_sha256": "77d56a5cb6178bf9a6a1d8149e187cc800c3be90ecb017e15e423b6ce50602b1",
+  "solver_bytes": 188091,
+  "origin": {
+    "description": "opnorm-derived official Solo solver before the Fin 7 false_907_2534 candidate change",
+    "baseline_doc": "docs/experiments/2026-05-07-opnorm-sample200-baseline.md"
+  },
+  "sample200": {
+    "run_dir": "artifacts/runs/2026-05-07/official-opnorm-sample200-max1024-round1-baseline",
+    "accepted": 175,
+    "rejected": 25,
+    "errors": 0,
+    "accepted_rate": 0.875,
+    "accepted_true": 77,
+    "accepted_false": 98,
+    "judge_calls": 561,
+    "llm_calls": 25,
+    "llm_solved": 0,
+    "elapsed_seconds": 2674.35
+  }
+}

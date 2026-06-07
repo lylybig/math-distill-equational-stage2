@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Strategy Mine True Template"
+  short_description: "Mine true proof-template candidates"
+  default_prompt: "Use $stage2-strategy-mine-true-template to mine true deterministic proof-template candidates, external solver proof evidence, opnorm/hconst match-collapse batches, and proofbank-gated evidence for the Stage 2 order5 registry."
+
+policy:
+  allow_implicit_invocation: true

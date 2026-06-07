@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Proofbank Generate"
+  short_description: "Generate Codex true proof responses"
+  default_prompt: "Use $stage2-proofbank-generate-true-certificate to synthesize Lean true proof responses for proof bank prompt items."
+
+policy:
+  allow_implicit_invocation: true

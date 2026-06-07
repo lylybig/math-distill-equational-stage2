@@ -1,0 +1,11 @@
+# 文本规范化
+* text=auto eol=lf
+
+# Lean 源码
+*.lean text diff=lean
+
+# Markdown
+*.md text diff=markdown
+
+# JSONL 大文件标记（如要追踪需走 lfs，并以 [lfs] 标识 PR）
+*.jsonl text

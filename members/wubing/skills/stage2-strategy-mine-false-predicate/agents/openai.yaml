@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Strategy Mine False Predicate"
+  short_description: "Mine false predicate candidates"
+  default_prompt: "Use $stage2-strategy-mine-false-predicate to mine false predicatecheck candidates and debug high-ROI certificate-blocked false strategies from paircheck banks, finite-model hits, and external solver evidence."
+
+policy:
+  allow_implicit_invocation: true

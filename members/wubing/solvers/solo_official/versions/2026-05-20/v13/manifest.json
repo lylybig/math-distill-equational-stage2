@@ -1,0 +1,158 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version": "2026-05-20/v13",
+  "created_date": "2026-05-20",
+  "status": "frozen_pre_distillation_baseline_no_solver_change",
+  "solver_path": "solvers/solo_official/versions/2026-05-20/v13/solver.py",
+  "base_version": "2026-05-12/v12",
+  "label": "pre-distillation-baseline-current-v12-identity",
+  "solver_sha256": "f43c446d60073dbfcddd34858ac3cc648f4eaa78faa151b51830100f771ec570",
+  "solver_bytes": 263124,
+  "summary": "Identity freeze of the current v12 solver before solver-ready distillation. No solver code changes; remote score evidence is inherited from v12 because the solver hash and byte size are identical.",
+  "remote_dev_fast": {
+    "run_id": "remote-d5-anchor-dev-fast-w24-c50-20260512-091605",
+    "run_dir": "/workspace/artifacts/runs/2026-05-11/remote-d5-anchor-dev-fast-w24-c50-20260512-091605",
+    "problem_count": 2000,
+    "max_workers": 24,
+    "problems_per_shard": 50,
+    "cache_enabled": true,
+    "solver_sha256": "f43c446d60073dbfcddd34858ac3cc648f4eaa78faa151b51830100f771ec570",
+    "solver_bytes": 263124,
+    "metrics": "1895A / 105R / 0E",
+    "accepted": 1895,
+    "rejected": 105,
+    "errors": 0,
+    "accepted_verdicts": {
+      "false": 1000,
+      "true": 895
+    },
+    "judge_calls": 3541,
+    "llm_calls": 0,
+    "returncode": 0,
+    "delta_vs_v11_remote_dev_fast": {
+      "accepted": 34,
+      "rejected": -34,
+      "errors": 0,
+      "accepted_true": 34,
+      "accepted_false": 0,
+      "judge_calls": -69,
+      "llm_calls": 0
+    }
+  },
+  "remote_dev_main": {
+    "run_id": "remote-d5-anchor-dev-main-w24-c50-20260512-093229",
+    "run_dir": "/workspace/artifacts/runs/2026-05-11/remote-d5-anchor-dev-main-w24-c50-20260512-093229",
+    "problem_count": 10000,
+    "max_workers": 24,
+    "problems_per_shard": 50,
+    "cache_enabled": true,
+    "solver_sha256": "f43c446d60073dbfcddd34858ac3cc648f4eaa78faa151b51830100f771ec570",
+    "solver_bytes": 263124,
+    "metrics": "9442A / 558R / 0E",
+    "accepted": 9442,
+    "rejected": 558,
+    "errors": 0,
+    "accepted_verdicts": {
+      "false": 4995,
+      "true": 4447
+    },
+    "judge_calls": 18291,
+    "llm_calls": 0,
+    "returncode": 0,
+    "delta_vs_v11_remote_dev_main": {
+      "accepted": 149,
+      "rejected": -149,
+      "errors": 0,
+      "accepted_true": 149,
+      "accepted_false": 0,
+      "judge_calls": -168,
+      "llm_calls": 0
+    }
+  },
+  "full_test_locked_gate": {
+    "baseline_version": "2026-05-12/v11",
+    "baseline_run_id": "remote-d3-hinst-grind-test-locked-w24-c50-20260511-230311",
+    "baseline_metrics": "46331A / 3669R / 0E",
+    "baseline_accepted": 46331,
+    "baseline_rejected": 3669,
+    "baseline_errors": 0,
+    "baseline_accepted_true": 21363,
+    "baseline_accepted_false": 24968,
+    "baseline_judge_calls": 93038,
+    "baseline_llm_calls": 0,
+    "candidate": {
+      "run_id": "remote-d5-anchor-test-locked-w24-c50-20260512-110427",
+      "run_dir": "/workspace/artifacts/runs/2026-05-11/remote-d5-anchor-test-locked-w24-c50-20260512-110427",
+      "problem_count": 50000,
+      "problem_input_sha256": "8a09561cecab0c8fa337db78c5c7876dfe472ac4708a85b4c9673c531a0dae7e",
+      "max_workers": 24,
+      "problems_per_shard": 50,
+      "cache_enabled": true,
+      "cache_exact_result_hits": 0,
+      "cache_exact_result_misses": 50000,
+      "cache_exact_result_writes": 50000,
+      "solver_sha256": "f43c446d60073dbfcddd34858ac3cc648f4eaa78faa151b51830100f771ec570",
+      "solver_bytes": 263124,
+      "submitted_at": "2026-05-12T03:04:45+00:00",
+      "metrics": "47031A / 2969R / 0E",
+      "accepted": 47031,
+      "rejected": 2969,
+      "errors": 0,
+      "accepted_verdicts": {
+        "false": 24968,
+        "true": 22063
+      },
+      "judge_calls": 92462,
+      "llm_calls": 0,
+      "aggregate_problem_elapsed_seconds": 362237.29,
+      "returncode": 0,
+      "delta_vs_v11_full_test_locked": {
+        "accepted": 700,
+        "rejected": -700,
+        "errors": 0,
+        "accepted_true": 700,
+        "accepted_false": 0,
+        "judge_calls": -576,
+        "llm_calls": 0
+      }
+    }
+  },
+  "constraints": {
+    "max_solver_bytes": 500000,
+    "llm_rounds": 0,
+    "official_export_touched": false,
+    "full_test_locked_50000": true
+  },
+  "promotion_verification": {
+    "promotion_pytest": {
+      "command": "pytest tests/official/test_official_solo_submission.py -q",
+      "result": "29 passed in 356.52s (0:05:56)"
+    },
+    "submission_single_file_after_cleanup": {
+      "command": "pytest tests/official/test_official_solo_submission.py::test_official_solo_submission_is_single_solver_file_under_limit -q",
+      "result": "1 passed in 0.02s"
+    },
+    "submission_dir_final_entries": [
+      "solver.py"
+    ]
+  },
+  "source_snapshot": "solvers/solo_official/current",
+  "evidence_inherited_from": "2026-05-12/v12",
+  "baseline_identity_check": {
+    "source_version": "2026-05-12/v12",
+    "source_solver_sha256": "f43c446d60073dbfcddd34858ac3cc648f4eaa78faa151b51830100f771ec570",
+    "source_solver_bytes": 263124,
+    "same_solver_sha256": true,
+    "same_solver_bytes": true,
+    "official_export_touched": false
+  },
+  "baseline_freeze_verification": {
+    "hash_identity": "current, v13, and 2026-05-12/v12 all share f43c446d60073dbfcddd34858ac3cc648f4eaa78faa151b51830100f771ec570",
+    "size_identity": "current, v13, and 2026-05-12/v12 are all 263124 bytes",
+    "focused_pytest": {
+      "command": "uv run pytest tests/official/test_official_solo_submission.py::test_current_solver_manifest_records_export_path_separately tests/official/test_official_solo_submission.py::test_official_solo_submission_is_single_solver_file_under_limit -q",
+      "result": "2 passed in 0.02s"
+    },
+    "official_export_touched": false
+  }
+}

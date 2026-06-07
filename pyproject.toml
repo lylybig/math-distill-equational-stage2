@@ -1,0 +1,26 @@
+[project]
+name = "etp-stage2-team"
+version = "0.1.0"
+description = "ETP Stage 2 distillation contest — team workspace"
+requires-python = ">=3.10"
+dependencies = [
+    # 评测脚本仅用 stdlib (urllib / concurrent.futures); 不需要重 deps
+    # judge_service/server.py 需要 fastapi + uvicorn:
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.4",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]  # line length handled by formatter

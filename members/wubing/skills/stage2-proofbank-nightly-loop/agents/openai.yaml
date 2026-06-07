@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Proofbank Nightly"
+  short_description: "Run explicitly authorized long proofbank loops"
+  default_prompt: "Use $stage2-proofbank-nightly-loop only after explicit authorization to run a bounded long Stage 2 proof bank expansion loop."
+
+policy:
+  allow_implicit_invocation: true

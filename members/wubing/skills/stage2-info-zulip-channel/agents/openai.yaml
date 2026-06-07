@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Info Zulip Channel"
+  short_description: "Archive Zulip and write daily digests"
+  default_prompt: "Use $stage2-info-zulip-channel to sync the Stage 2 Zulip channel, archive original messages, and generate daily Chinese summaries."
+
+policy:
+  allow_implicit_invocation: true

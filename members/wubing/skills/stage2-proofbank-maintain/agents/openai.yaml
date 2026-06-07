@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Proofbank Maintain"
+  short_description: "Merge and audit the certificate bank"
+  default_prompt: "Use $stage2-proofbank-maintain to merge, check, or rebuild the global Stage 2 true certificate bank."
+
+policy:
+  allow_implicit_invocation: true

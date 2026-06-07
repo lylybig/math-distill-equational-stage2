@@ -1,0 +1,6 @@
+[submodule "third_party/equational-theories-lean-stage2"]
+	path = third_party/equational-theories-lean-stage2
+	url = https://github.com/SAIRcompetition/equational-theories-lean-stage2.git
+[submodule "third_party/equational_theories"]
+	path = third_party/equational_theories
+	url = https://github.com/teorth/equational_theories.git

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Proofbank Verify"
+  short_description: "Verify and import proof responses"
+  default_prompt: "Use $stage2-proofbank-verify-import to extract Codex proof responses and verify them with the official Stage 2 judge."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Report Solver Baseline"
+  short_description: "Write solver baseline reports"
+  default_prompt: "Use $stage2-report-solver-baseline to create concise Stage 2 Solo solver baseline reports."
+
+policy:
+  allow_implicit_invocation: true

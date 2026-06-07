@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Strategy Mine Setcheck"
+  short_description: "Mine finite-model setcheck candidates"
+  default_prompt: "Use $stage2-strategy-mine-setcheck to mine, import table banks, rank, or certificate-debug finite-model setcheck candidates for controller-reviewed Stage 2 registry updates."
+
+policy:
+  allow_implicit_invocation: true

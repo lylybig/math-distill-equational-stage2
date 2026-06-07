@@ -1,0 +1,100 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-08/v6",
+  "label": "vampire-superpose-collapse-sample200-186",
+  "created_date": "2026-05-08",
+  "status": "frozen_baseline",
+  "solver_path": "solvers/solo_official/versions/2026-05-08/v6/solver.py",
+  "solver_sha256": "4b60a63a858f38c7e5d4ca6ea2212c6d04bb09d93dcc614e5c3df82d365d285e",
+  "solver_bytes": 204806,
+  "origin": {
+    "source_draft": "2026-05-08/d8",
+    "base_version": "2026-05-08/v5",
+    "description": "Add a deterministic Vampire/superpose total-collapse proof compiler for Equation689-style true failures."
+  },
+  "changes": [
+    "Add try_vampire_superpose_collapse_compiler for Equation689-style collapse proofs",
+    "Emit have/congrArg/exact certificates accepted by the official judge without external theorem imports",
+    "Keep false coverage unchanged at 100/100",
+    "Keep the solver under the 500000 byte official limit"
+  ],
+  "validation": {
+    "focused_tests": [
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d8_true_689_compiles_collapse_before_llm -q",
+        "status": "passed",
+        "result": "1 passed in 10.64s"
+      },
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d8_true_689_compiles_collapse_before_llm tests/official/test_official_solo_submission.py::test_d7_true_3108_compiles_superpose_projection_before_llm tests/official/test_official_solo_submission.py::test_d7_true_674_compiles_left_absorption_before_llm tests/official/test_official_solo_submission.py::test_d6_true_2074_uses_deterministic_grind_before_llm -q",
+        "status": "passed",
+        "result": "4 passed in 42.11s"
+      }
+    ],
+    "targeted": [
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d8-single-true689-abs",
+        "problem_set": "000015_true_689_1350",
+        "accepted": 1,
+        "rejected": 0,
+        "errors": 0,
+        "llm_calls": 0,
+        "judge_calls": 2
+      },
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d8-truefailed17-parallel-w8",
+        "problem_set": "d7_true_failed17",
+        "accepted": 3,
+        "rejected": 14,
+        "errors": 0,
+        "llm_calls": 14,
+        "judge_calls": 151
+      }
+    ]
+  },
+  "sample200": {
+    "run_dir": "artifacts/runs/2026-05-08/official-draft-d8-sample200-parallel-w8",
+    "accepted": 186,
+    "rejected": 14,
+    "errors": 0,
+    "accepted_rate": 0.93,
+    "accepted_true": 86,
+    "accepted_false": 100,
+    "judge_calls": 393,
+    "llm_calls": 14,
+    "llm_solved": 0,
+    "aggregate_problem_elapsed_seconds": 3547.9,
+    "elapsed_seconds": 3547.9,
+    "elapsed_text": "59m07.9s",
+    "elapsed_seconds_meaning": "aggregate per-problem solver elapsed time from the runner summary; not end-to-end wall time for parallel runs",
+    "wall_time_seconds": 545.0,
+    "wall_time_text": "9m05.0s",
+    "wall_time_source": "summary.createdAt to summary.json mtime",
+    "delta_vs_previous_current": {
+      "accepted": 1,
+      "rejected": -1,
+      "errors": 0,
+      "true_accepted": 1,
+      "false_accepted": 0
+    },
+    "newly_solved_ids": [
+      "true_689_1350"
+    ],
+    "remaining_failed_ids": [
+      "true_1167_2000",
+      "true_1698_555",
+      "true_1604_1822",
+      "true_2860_3458",
+      "true_1738_1258",
+      "true_2654_2864",
+      "true_2789_898",
+      "true_2935_3138",
+      "true_428_3725",
+      "true_1500_498",
+      "true_691_1976",
+      "true_2771_2775",
+      "true_2055_2656",
+      "true_1636_1839"
+    ]
+  }
+}

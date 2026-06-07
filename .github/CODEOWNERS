@@ -1,0 +1,26 @@
+# CODEOWNERS — 公共区改动强制 review
+#
+# 注: GitHub 只对在 repo 有 write 权限的用户 mention 生效。
+# 加入实际 GitHub username 后启用 (留空时仅起目录文档作用)。
+
+# 默认: 无所有人
+# *
+
+# 公共核心库 - 需 review
+# solvers/             @org/leads
+# datasets/         @org/leads
+# scripts/          @org/leads
+# judge_service/    @org/leads
+# .env.example      @org/leads
+
+# 公共文档 - 需 review
+# docs/blueprints/  @org/leads
+# docs/playbook/    @org/leads
+
+# 周报 - 任意成员可改自己段落, 但合并由组长
+# docs/weekly/      @org/leads
+
+# 各成员目录 - 仅本人 (社交契约, GitHub 强制需先加 user)
+# members/wubing/      @<wubing-github-username>
+# members/zhangkang/   @<zhangkang-github-username>
+# members/yanliang/    @<yanliang-github-username>

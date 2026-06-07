@@ -1,0 +1,101 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-08/v4",
+  "label": "deterministic-grind-sample200-183",
+  "created_date": "2026-05-08",
+  "status": "frozen_baseline",
+  "solver_path": "solvers/solo_official/versions/2026-05-08/v4/solver.py",
+  "solver_sha256": "16a82efaa8e4333974298d31e5104297e0eaa98c2eabeb07ce3947cb02d41153",
+  "solver_bytes": 192763,
+  "origin": {
+    "source_draft": "2026-05-08/d6",
+    "base_draft": "2026-05-08/d4",
+    "base_version": "2026-05-07/v3",
+    "description": "Add a deterministic Lean 4 grind true-proof fallback before heavier true searches and LLM fallback."
+  },
+  "changes": [
+    "Add try_grind_proof(problem, eq2_text) for true goals",
+    "Emit intro variables followed by grind when the official judge accepts it",
+    "Call grind after transitive library proof and before heavier custom true searches or LLM fallback"
+  ],
+  "validation": {
+    "focused_tests": [
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d6_true_2074_uses_deterministic_grind_before_llm -q",
+        "status": "passed"
+      },
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d6_true_2074_uses_deterministic_grind_before_llm tests/official/test_official_solo_submission.py::test_d4_true_130_restores_structural_congrarg_template_without_placeholder tests/official/test_official_solo_submission.py::test_d5_allows_second_llm_round_after_unparseable_first_response -q",
+        "status": "passed"
+      }
+    ],
+    "targeted": [
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d6-grind5-parallel-w8",
+        "problem_set": "d4_true_failed_grind5",
+        "accepted": 5,
+        "rejected": 0,
+        "errors": 0,
+        "llm_calls": 0,
+        "judge_calls": 5
+      },
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d6-truefailed22-parallel-w8",
+        "problem_set": "d4_true_failed22",
+        "accepted": 5,
+        "rejected": 17,
+        "errors": 0,
+        "llm_calls": 17,
+        "judge_calls": 171
+      }
+    ]
+  },
+  "sample200": {
+    "run_dir": "artifacts/runs/2026-05-08/official-draft-d6-sample200-parallel-w8",
+    "accepted": 183,
+    "rejected": 17,
+    "errors": 0,
+    "accepted_rate": 0.915,
+    "accepted_true": 83,
+    "accepted_false": 100,
+    "judge_calls": 417,
+    "llm_calls": 17,
+    "llm_solved": 0,
+    "elapsed_seconds": 3617.77,
+    "elapsed_text": "60m17.8s",
+    "delta_vs_previous_current": {
+      "accepted": 6,
+      "rejected": -6,
+      "errors": 0,
+      "true_accepted": 6,
+      "false_accepted": 0
+    },
+    "newly_solved_ids": [
+      "true_2942_5",
+      "true_2111_1755",
+      "true_2061_307",
+      "true_2135_2128",
+      "true_2137_1325",
+      "true_2074_2082"
+    ],
+    "remaining_failed_ids": [
+      "true_3108_4642",
+      "true_1167_2000",
+      "true_1698_555",
+      "true_1604_1822",
+      "true_2860_3458",
+      "true_1738_1258",
+      "true_2654_2864",
+      "true_2789_898",
+      "true_2935_3138",
+      "true_428_3725",
+      "true_1500_498",
+      "true_691_1976",
+      "true_2771_2775",
+      "true_2055_2656",
+      "true_689_1350",
+      "true_674_668",
+      "true_1636_1839"
+    ]
+  }
+}

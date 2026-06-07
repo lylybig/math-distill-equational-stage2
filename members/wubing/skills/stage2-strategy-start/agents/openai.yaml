@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Strategy Start"
+  short_description: "Route strategy controller and mining work"
+  default_prompt: "Use $stage2-strategy-start to continue Stage 2 strategy registry work and choose controller merge review, true mining, false mining, external solver evidence triage, setcheck exploration, proofbank gate, or reporting."
+
+policy:
+  allow_implicit_invocation: true

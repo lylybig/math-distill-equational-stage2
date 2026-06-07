@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Strategy Explore"
+  short_description: "Review registry candidates and queues"
+  default_prompt: "Use $stage2-strategy-explore to refresh strategy mining state, review merge queues, audit merge gates, triage external solver evidence, and validate Stage 2 registry candidates."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Train Offline Explore Solver"
+  short_description: "Explore solver improvement direction"
+  default_prompt: "Use $stage2-train-offline-explore-solver to offline explore Stage 2 Solo solver improvement direction."
+
+policy:
+  allow_implicit_invocation: true

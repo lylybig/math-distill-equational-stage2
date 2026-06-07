@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Train Analyze Run"
+  short_description: "Analyze official solver run"
+  default_prompt: "Use $stage2-train-analyze-run to classify failures from an existing official Stage 2 solver run directory."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.local
+
+# Lean
+.lake/
+build/
+lake-packages/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Experiment outputs (走 Releases, 不入库)
+dist/
+runs/
+logs/
+*.log
+*.cex.jsonl
+*.lean.out
+*.tar.gz
+*.zip
+
+# Worktree 本地副本
+worktree/
+.worktrees/
+
+# 大数据集快照 (本地生成)
+datasets/raw/
+datasets/cache/
+datasets/lawbook/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints

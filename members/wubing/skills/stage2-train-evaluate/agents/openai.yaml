@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Train Evaluate"
+  short_description: "Run official solver evaluation"
+  default_prompt: "Use $stage2-train-evaluate to run the official Stage 2 Solo solver evaluation in this repository."
+
+policy:
+  allow_implicit_invocation: true

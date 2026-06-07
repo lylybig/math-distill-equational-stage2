@@ -1,0 +1,177 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-12/v11",
+  "label": "hinstantiated-grind-proofbank-pattern-remote-test-locked-46331",
+  "created_date": "2026-05-12",
+  "status": "frozen_current_best_remote_order4_full_test_locked",
+  "solver_path": "solvers/solo_official/versions/2026-05-12/v11/solver.py",
+  "solver_sha256": "ca6585bcb8a9e649377abf97f2bed795875982edaad6e8b0cb84fa8ff848e7a5",
+  "solver_bytes": 259195,
+  "origin": {
+    "source_draft": "2026-05-11/d3",
+    "base_version": "2026-05-09/v10",
+    "description": "Add generic h-instantiated grind proof generation for single-variable-LHS true equations, synthesized from the current equations rather than a pair-level known-proof table."
+  },
+  "changes": [
+    "Add try_hinstantiated_grind_proof after bare grind and before heavier deterministic compilers.",
+    "Generate h-instantiation batches from goal variables, goal compound subterms, and equation syntax, then close with grind.",
+    "Keep MAX_LLM_ROUNDS at 0 and preserve the no-runtime-LLM solver path.",
+    "Do not read proofbank files at runtime and do not add pair-level known-proof table entries."
+  ],
+  "validation": {
+    "focused_tests": [
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d17_solver_emits_hinstantiated_grind_for_proofbank_true_samples -q",
+        "status": "passed",
+        "result": "1 passed in 65.01s"
+      },
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py -q",
+        "status": "passed",
+        "result": "27 passed in 283.02s"
+      }
+    ],
+    "targeted": [
+      {
+        "command": "python scripts/evaluator/run_official_solo_history_parallel.py --submission artifacts/submissions/solo_official_d3_hinst_grind --problem-set /home/bing/.openclaw/workspace-fenshen-executor-agent/Math-Distill-Stage2/artifacts/tmp/2026-05-11-d17-hinst-grind-targeted.jsonl --run-id official-draft-d3-hinst-grind-targeted-w2 --max-workers 2 --problems-per-shard 1",
+        "run_dir": "artifacts/runs/2026-05-11/official-draft-d3-hinst-grind-targeted-w2",
+        "metrics": "6A / 0R / 0E",
+        "accepted": 6,
+        "rejected": 0,
+        "errors": 0,
+        "llm_calls": 0,
+        "judge_calls_per_problem": 2,
+        "problem_ids": [
+          "true_1108_991",
+          "true_1717_1879",
+          "true_2123_4481",
+          "true_2216_2785",
+          "true_2419_1450",
+          "true_2529_2783"
+        ]
+      }
+    ],
+    "remote_dev_fast": {
+      "run_id": "remote-d3-hinst-grind-dev-fast-w24-c50-20260511-223747",
+      "run_dir": "/workspace/artifacts/runs/2026-05-11/remote-d3-hinst-grind-dev-fast-w24-c50-20260511-223747",
+      "problem_count": 2000,
+      "max_workers": 24,
+      "problems_per_shard": 50,
+      "cache_enabled": true,
+      "solver_sha256": "ca6585bcb8a9e649377abf97f2bed795875982edaad6e8b0cb84fa8ff848e7a5",
+      "solver_bytes": 259195,
+      "submitted_at": "2026-05-11T14:37:48+00:00",
+      "metrics": "1861A / 139R / 0E",
+      "accepted": 1861,
+      "rejected": 139,
+      "errors": 0,
+      "accepted_verdicts": {
+        "false": 1000,
+        "true": 861
+      },
+      "judge_calls": 3610,
+      "llm_calls": 0,
+      "elapsed_seconds": 24421.72,
+      "returncode": 0,
+      "delta_vs_current_v10_remote_dev_fast": {
+        "accepted": 213,
+        "rejected": -213,
+        "errors": 0
+      },
+      "delta_vs_d2_remote_dev_fast": {
+        "accepted": 207,
+        "rejected": -207,
+        "errors": 0
+      }
+    },
+    "remote_dev_main": {
+      "run_id": "remote-d3-hinst-grind-dev-main-w24-c20-20260511-175532",
+      "run_dir": "/workspace/artifacts/runs/2026-05-09/remote-d3-hinst-grind-dev-main-w24-c20-20260511-175532",
+      "problem_count": 10000,
+      "max_workers": 24,
+      "problems_per_shard": 20,
+      "solver_sha256": "ca6585bcb8a9e649377abf97f2bed795875982edaad6e8b0cb84fa8ff848e7a5",
+      "solver_bytes": 259195,
+      "submitted_at": "2026-05-11T09:55:35+00:00",
+      "metrics": "9293A / 707R / 0E",
+      "accepted": 9293,
+      "rejected": 707,
+      "errors": 0,
+      "accepted_verdicts": {
+        "false": 4995,
+        "true": 4298
+      },
+      "judge_calls": 18459,
+      "llm_calls": 0,
+      "elapsed_seconds": 149288.06,
+      "returncode": 0,
+      "delta_vs_current_v10_remote_dev_main": {
+        "accepted": 1066,
+        "rejected": -1066,
+        "errors": 0
+      },
+      "delta_vs_d1_remote_dev_main": {
+        "accepted": 1064,
+        "rejected": -1064,
+        "errors": 0
+      }
+    },
+    "full_test_locked_gate": {
+      "baseline_version": "2026-05-09/v10",
+      "baseline_run_id": "remote-v10-test-locked-full-w24-20260510-002",
+      "baseline_run_dir": "/workspace/artifacts/runs/2026-05-09/remote-v10-test-locked-full-w24-20260510-002",
+      "baseline_metrics": "40971A / 9029R / 0E",
+      "baseline_accepted": 40971,
+      "baseline_rejected": 9029,
+      "baseline_errors": 0,
+      "baseline_accepted_true": 16003,
+      "baseline_accepted_false": 24968,
+      "baseline_judge_calls": 132265,
+      "baseline_llm_calls": 0,
+      "candidate": {
+        "run_id": "remote-d3-hinst-grind-test-locked-w24-c50-20260511-230311",
+        "run_dir": "/workspace/artifacts/runs/2026-05-11/remote-d3-hinst-grind-test-locked-w24-c50-20260511-230311",
+        "problem_count": 50000,
+        "problem_input_sha256": "8a09561cecab0c8fa337db78c5c7876dfe472ac4708a85b4c9673c531a0dae7e",
+        "max_workers": 24,
+        "problems_per_shard": 50,
+        "cache_enabled": true,
+        "cache_exact_result_hits": 0,
+        "cache_exact_result_misses": 50000,
+        "cache_exact_result_writes": 50000,
+        "solver_sha256": "ca6585bcb8a9e649377abf97f2bed795875982edaad6e8b0cb84fa8ff848e7a5",
+        "solver_bytes": 259195,
+        "submitted_at": "2026-05-11T15:03:24+00:00",
+        "observed_done_at": "2026-05-11T22:50:52Z",
+        "metrics": "46331A / 3669R / 0E",
+        "accepted": 46331,
+        "rejected": 3669,
+        "errors": 0,
+        "accepted_verdicts": {
+          "false": 24968,
+          "true": 21363
+        },
+        "judge_calls": 93038,
+        "llm_calls": 0,
+        "aggregate_problem_elapsed_seconds": 655814.0,
+        "returncode": 0,
+        "delta_vs_v10_full_test_locked": {
+          "accepted": 5360,
+          "rejected": -5360,
+          "errors": 0,
+          "accepted_true": 5360,
+          "accepted_false": 0,
+          "judge_calls": -39227,
+          "llm_calls": 0
+        }
+      }
+    }
+  },
+  "constraints": {
+    "max_solver_bytes": 500000,
+    "llm_rounds": 0,
+    "official_export_touched": false,
+    "full_22m_sweep": false,
+    "full_test_locked_50000": true
+  }
+}

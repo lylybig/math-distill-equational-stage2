@@ -1,0 +1,88 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-07/v3",
+  "label": "fin5-false1682-sample200-177",
+  "created_date": "2026-05-08",
+  "status": "frozen_baseline",
+  "solver_path": "solvers/solo_official/versions/2026-05-07/v3/solver.py",
+  "solver_sha256": "071aeda79bb487bef495ea997b7528b6e7c32f99672d4729a76a053b6e855907",
+  "solver_bytes": 188642,
+  "origin": {
+    "source_draft": "2026-05-07/d2",
+    "base_version": "2026-05-07/v2",
+    "description": "Inline Fin 5 known counterexample for false_1682_411, solving the last sample200 false failure without regressions."
+  },
+  "changes": [
+    "Add inline Fin 5 known counterexample for Equation1682 -> Equation411 from ETP Refutation906"
+  ],
+  "validation": {
+    "focused_tests": [
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d2_solver_emits_fin5_counterexample_for_false_1682_411 -q",
+        "status": "passed"
+      }
+    ],
+    "single_problem": {
+      "run_dir": "artifacts/runs/2026-05-07/official-draft-d2-single-false1682",
+      "problem_id": "false_1682_411",
+      "accepted": 1,
+      "rejected": 0,
+      "errors": 0,
+      "llm_calls": 0
+    },
+    "failed_subset": {
+      "run_dir": "artifacts/runs/2026-05-07/official-draft-d2-failed25",
+      "problem_set": "baseline_failed_25",
+      "accepted": 2,
+      "rejected": 23,
+      "errors": 0,
+      "llm_calls": 23,
+      "newly_solved_ids": [
+        "false_907_2534",
+        "false_1682_411"
+      ]
+    }
+  },
+  "sample200": {
+    "run_dir": "artifacts/runs/2026-05-07/official-draft-d2-sample200",
+    "accepted": 177,
+    "rejected": 23,
+    "errors": 0,
+    "accepted_rate": 0.885,
+    "accepted_true": 77,
+    "accepted_false": 100,
+    "judge_calls": 536,
+    "llm_calls": 23,
+    "llm_solved": 0,
+    "elapsed_seconds": 2611.6,
+    "elapsed_text": "43m31.6s",
+    "newly_solved_ids": [
+      "false_1682_411"
+    ],
+    "remaining_failed_ids": [
+      "true_2942_5",
+      "true_3108_4642",
+      "true_1167_2000",
+      "true_1698_555",
+      "true_1604_1822",
+      "true_2111_1755",
+      "true_2860_3458",
+      "true_2061_307",
+      "true_1738_1258",
+      "true_2654_2864",
+      "true_2789_898",
+      "true_2935_3138",
+      "true_2135_2128",
+      "true_428_3725",
+      "true_1500_498",
+      "true_2137_1325",
+      "true_691_1976",
+      "true_2074_2082",
+      "true_2771_2775",
+      "true_2055_2656",
+      "true_689_1350",
+      "true_674_668",
+      "true_1636_1839"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stage2 Proofbank Sample"
+  short_description: "Select targeted or reproducible proof candidates"
+  default_prompt: "Use $stage2-proofbank-sample-candidates to select targeted strategy-gate seeds or a reproducible stratified pool for Stage 2 proof bank generation."
+
+policy:
+  allow_implicit_invocation: true

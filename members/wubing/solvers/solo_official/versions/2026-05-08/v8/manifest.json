@@ -1,0 +1,103 @@
+{
+  "schema": "stage2-solo-solver-version-v1",
+  "version_id": "2026-05-08/v8",
+  "label": "no-llm-square-shuffle-idempotent-expansion-sample200-187",
+  "created_date": "2026-05-08",
+  "status": "frozen_current_best",
+  "solver_path": "solvers/solo_official/versions/2026-05-08/v8/solver.py",
+  "solver_sha256": "dce917ff9673cc285297eae13aaa12136f26fff1cfc6663940ed9a6903558831",
+  "solver_bytes": 213368,
+  "origin": {
+    "source_draft": "2026-05-08/d10",
+    "base_version": "2026-05-08/v7",
+    "description": "Add deterministic proof compilers for the Equation428 idempotent-expansion seed and protect the existing Equation4082 square-shuffle no-LLM proof from late-search timeout."
+  },
+  "changes": [
+    "Add an Equation428-style idempotent-expansion compiler that derives eq12/eq13/eq20 with have/calc/congrArg",
+    "Add an Equation4082-style square-shuffle compiler before heavier searches to keep true_4082_4109 at one judge call",
+    "Keep MAX_LLM_ROUNDS at 0; no runtime LLM dependency",
+    "Do not add a known-proof table entry and do not import external equational_theories modules"
+  ],
+  "validation": {
+    "focused_tests": [
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d10_true_4082_compiles_square_shuffle_before_grind -q",
+        "status": "passed",
+        "result": "1 passed in 10.63s"
+      },
+      {
+        "command": "pytest tests/official/test_official_solo_submission.py::test_d10_true_4082_compiles_square_shuffle_before_grind tests/official/test_official_solo_submission.py::test_d10_true_428_compiles_idempotent_expansion_before_llm tests/official/test_official_solo_submission.py::test_d9_no_llm_exits_without_llm_after_rejected_true_attempt tests/official/test_official_solo_submission.py::test_d8_true_689_compiles_collapse_before_llm tests/official/test_official_solo_submission.py::test_d7_true_3108_compiles_superpose_projection_before_llm tests/official/test_official_solo_submission.py::test_d7_true_674_compiles_left_absorption_before_llm -q",
+        "status": "passed",
+        "result": "6 passed in 62.77s"
+      }
+    ],
+    "targeted": [
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d10-repair-single-true4082",
+        "problem_set": "d10_repair_true_4082",
+        "accepted": 1,
+        "rejected": 0,
+        "errors": 0,
+        "llm_calls": 0,
+        "judge_calls": 1,
+        "aggregate_problem_elapsed_seconds": 12.63
+      },
+      {
+        "run_dir": "artifacts/runs/2026-05-08/official-draft-d10-repair-true4082-true428-parallel-w8",
+        "problem_set": "d10_repair_true_4082_428",
+        "accepted": 2,
+        "rejected": 0,
+        "errors": 0,
+        "llm_calls": 0,
+        "judge_calls": 3,
+        "aggregate_problem_elapsed_seconds": 26.76
+      }
+    ]
+  },
+  "sample200": {
+    "run_dir": "artifacts/runs/2026-05-08/official-draft-d10-repair-sample200-parallel-w8",
+    "accepted": 187,
+    "rejected": 13,
+    "errors": 0,
+    "accepted_rate": 0.935,
+    "accepted_true": 87,
+    "accepted_false": 100,
+    "judge_calls": 361,
+    "llm_calls": 0,
+    "llm_solved": 0,
+    "aggregate_problem_elapsed_seconds": 2950.41,
+    "elapsed_seconds": 2950.41,
+    "elapsed_text": "49m10.4s",
+    "elapsed_seconds_meaning": "aggregate per-problem solver elapsed time from the runner summary; not end-to-end wall time for parallel runs",
+    "wall_time_seconds": 435.8,
+    "wall_time_text": "7m15.8s",
+    "wall_time_source": "summary.createdAt to summary.json mtime",
+    "delta_vs_previous_current": {
+      "accepted": 1,
+      "rejected": -1,
+      "errors": 0,
+      "true_accepted": 1,
+      "false_accepted": 0,
+      "llm_calls": 0,
+      "judge_calls": -15
+    },
+    "newly_solved_ids": [
+      "true_428_3725"
+    ],
+    "remaining_failed_ids": [
+      "true_1167_2000",
+      "true_1698_555",
+      "true_1604_1822",
+      "true_2860_3458",
+      "true_1738_1258",
+      "true_2654_2864",
+      "true_2789_898",
+      "true_2935_3138",
+      "true_1500_498",
+      "true_691_1976",
+      "true_2771_2775",
+      "true_2055_2656",
+      "true_1636_1839"
+    ]
+  }
+}
